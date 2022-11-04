@@ -161,7 +161,7 @@ class _DockerManagePageState extends State<DockerManagePage> {
             size: 17,
           ),
         ),
-        customItemsHeight: 8,
+        // customItemsHeight: 8,
         items: [
           DropdownMenuItem<DropdownBtnItem>(
             value: item,

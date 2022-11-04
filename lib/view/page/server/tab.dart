@@ -215,8 +215,8 @@ class _ServerPageState extends State<ServerPage>
             size: 17,
           ),
         ),
-        customItemsIndexes: [ServerTabMenuItems.firstItems.length],
-        customItemsHeight: 8,
+        // customItemsIndexes: [ServerTabMenuItems.firstItems.length],
+        // customItemsHeight: 8,
         items: [
           ...ServerTabMenuItems.firstItems.map(
             (item) => DropdownMenuItem<DropdownBtnItem>(
