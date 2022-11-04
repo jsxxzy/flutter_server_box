@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_advanced_drawer/flutter_advanced_drawer.dart';
 import 'package:get_it/get_it.dart';
-import 'package:toolbox/core/analysis.dart';
+// import 'package:toolbox/core/analysis.dart';
 import 'package:toolbox/core/build_mode.dart';
 import 'package:toolbox/core/route.dart';
 import 'package:toolbox/core/update.dart';
@@ -21,7 +21,7 @@ import 'package:toolbox/generated/l10n.dart';
 import 'package:toolbox/locator.dart';
 import 'package:toolbox/view/page/backup.dart';
 import 'package:toolbox/view/page/convert.dart';
-import 'package:toolbox/view/page/debug.dart';
+// import 'package:toolbox/view/page/debug.dart';
 import 'package:toolbox/view/page/ping.dart';
 import 'package:toolbox/view/page/private_key/list.dart';
 import 'package:toolbox/view/page/server/tab.dart';
@@ -121,15 +121,16 @@ class _MyHomePageState extends State<MyHomePage>
         drawer: _buildDrawer(),
         child: Scaffold(
           appBar: AppBar(
+            elevation: 0,
             title: Text(tabTitleName(context, _selectIndex), style: size18),
-            actions: [
-              IconButton(
-                icon: const Icon(Icons.developer_mode, size: 23),
-                tooltip: s.debug,
-                onPressed: () =>
-                    AppRoute(const DebugPage(), 'Debug Page').go(context),
-              ),
-            ],
+            // actions: [
+            //   IconButton(
+            //     icon: const Icon(Icons.developer_mode, size: 23),
+            //     tooltip: s.debug,
+            //     onPressed: () =>
+            //         AppRoute(const DebugPage(), 'Debug Page').go(context),
+            //   ),
+            // ],
             leading: IconButton(
               onPressed: () => _advancedDrawerController.showDrawer(),
               icon: ValueListenableBuilder<AdvancedDrawerValue>(
@@ -335,7 +336,7 @@ class _MyHomePageState extends State<MyHomePage>
     await locator<ServerProvider>().loadLocalData();
     await doUpdate(context);
     if (BuildMode.isRelease) {
-      await Analysis.init(false);
+      // await Analysis.init(false);
     }
   }
 }

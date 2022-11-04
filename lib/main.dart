@@ -5,7 +5,7 @@ import 'package:hive_flutter/hive_flutter.dart';
 import 'package:logging/logging.dart';
 import 'package:provider/provider.dart';
 import 'package:toolbox/app.dart';
-import 'package:toolbox/core/analysis.dart';
+// import 'package:toolbox/core/analysis.dart';
 import 'package:toolbox/data/provider/app.dart';
 import 'package:toolbox/data/provider/apt.dart';
 import 'package:toolbox/data/provider/debug.dart';
@@ -52,7 +52,7 @@ void runInZone(dynamic Function() body) {
 }
 
 void onError(Object obj, StackTrace stack) {
-  Analysis.recordException(obj);
+  // Analysis.recordException(obj);
   final debugProvider = locator<DebugProvider>();
   debugProvider.addError(obj);
   debugProvider.addError(stack);
