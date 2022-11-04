@@ -72,7 +72,8 @@ Future<void> main() async {
           ChangeNotifierProvider(create: (_) => locator<SnippetProvider>()),
           ChangeNotifierProvider(create: (_) => locator<PrivateKeyProvider>()),
           ChangeNotifierProvider(
-              create: (_) => locator<SftpDownloadProvider>()),
+            create: (_) => locator<SftpDownloadProvider>(),
+          ),
         ],
         child: const MyApp(),
       ),
