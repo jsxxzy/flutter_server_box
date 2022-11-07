@@ -315,8 +315,10 @@ class _SFTPPageState extends State<SFTPPage> {
                   ]);
                   return;
                 }
-                (await _status.client!
-                        .open('${_status.path!.path}/${textController.text}'))
+                var createFilePath =
+                    '${_status.path!.path}/${textController.text}';
+                debugPrint("create file path: $createFilePath");
+                (await _status.client!.open(createFilePath,mode: SftpFileOpenMode.create))
                     .writeBytes(Uint8List(0));
                 Navigator.of(context).pop();
                 listDir();
